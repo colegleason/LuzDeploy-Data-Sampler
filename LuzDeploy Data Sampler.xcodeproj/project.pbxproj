@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED7399C81E46767100006CA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7399C71E46767100006CA8 /* main.m */; };
+		ED7399CB1E46767100006CA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7399CA1E46767100006CA8 /* AppDelegate.m */; };
+		ED7399CE1E46767100006CA8 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7399CD1E46767100006CA8 /* MasterViewController.m */; };
+		ED7399D11E46767100006CA8 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7399D01E46767100006CA8 /* DetailViewController.m */; };
+		ED7399D41E46767100006CA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7399D21E46767100006CA8 /* Main.storyboard */; };
+		ED7399D61E46767100006CA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7399D51E46767100006CA8 /* Assets.xcassets */; };
+		ED7399D91E46767100006CA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7399D71E46767100006CA8 /* LaunchScreen.storyboard */; };
+		ED7399E41E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7399E31E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED7399E01E46767100006CA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED7399BB1E46767100006CA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED7399C21E46767100006CA8;
+			remoteInfo = "LuzDeploy Data Sampler";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED7399C31E46767100006CA8 /* LuzDeploy Data Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LuzDeploy Data Sampler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED7399C71E46767100006CA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ED7399C91E46767100006CA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ED7399CA1E46767100006CA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ED7399CC1E46767100006CA8 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		ED7399CD1E46767100006CA8 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		ED7399CF1E46767100006CA8 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		ED7399D01E46767100006CA8 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		ED7399D31E46767100006CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED7399D51E46767100006CA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED7399D81E46767100006CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED7399DA1E46767100006CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED7399DF1E46767100006CA8 /* LuzDeploy Data SamplerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LuzDeploy Data SamplerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED7399E31E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuzDeploy_Data_SamplerTests.m; sourceTree = "<group>"; };
+		ED7399E51E46767100006CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED7399C01E46767100006CA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED7399DC1E46767100006CA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED7399BA1E46767100006CA8 = {
+			isa = PBXGroup;
+			children = (
+				ED7399C51E46767100006CA8 /* LuzDeploy Data Sampler */,
+				ED7399E21E46767100006CA8 /* LuzDeploy Data SamplerTests */,
+				ED7399C41E46767100006CA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED7399C41E46767100006CA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED7399C31E46767100006CA8 /* LuzDeploy Data Sampler.app */,
+				ED7399DF1E46767100006CA8 /* LuzDeploy Data SamplerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED7399C51E46767100006CA8 /* LuzDeploy Data Sampler */ = {
+			isa = PBXGroup;
+			children = (
+				ED7399C91E46767100006CA8 /* AppDelegate.h */,
+				ED7399CA1E46767100006CA8 /* AppDelegate.m */,
+				ED7399CC1E46767100006CA8 /* MasterViewController.h */,
+				ED7399CD1E46767100006CA8 /* MasterViewController.m */,
+				ED7399CF1E46767100006CA8 /* DetailViewController.h */,
+				ED7399D01E46767100006CA8 /* DetailViewController.m */,
+				ED7399D21E46767100006CA8 /* Main.storyboard */,
+				ED7399D51E46767100006CA8 /* Assets.xcassets */,
+				ED7399D71E46767100006CA8 /* LaunchScreen.storyboard */,
+				ED7399DA1E46767100006CA8 /* Info.plist */,
+				ED7399C61E46767100006CA8 /* Supporting Files */,
+			);
+			path = "LuzDeploy Data Sampler";
+			sourceTree = "<group>";
+		};
+		ED7399C61E46767100006CA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED7399C71E46767100006CA8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED7399E21E46767100006CA8 /* LuzDeploy Data SamplerTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED7399E31E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m */,
+				ED7399E51E46767100006CA8 /* Info.plist */,
+			);
+			path = "LuzDeploy Data SamplerTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED7399C21E46767100006CA8 /* LuzDeploy Data Sampler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED7399E81E46767100006CA8 /* Build configuration list for PBXNativeTarget "LuzDeploy Data Sampler" */;
+			buildPhases = (
+				ED7399BF1E46767100006CA8 /* Sources */,
+				ED7399C01E46767100006CA8 /* Frameworks */,
+				ED7399C11E46767100006CA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LuzDeploy Data Sampler";
+			productName = "LuzDeploy Data Sampler";
+			productReference = ED7399C31E46767100006CA8 /* LuzDeploy Data Sampler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED7399DE1E46767100006CA8 /* LuzDeploy Data SamplerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED7399EB1E46767100006CA8 /* Build configuration list for PBXNativeTarget "LuzDeploy Data SamplerTests" */;
+			buildPhases = (
+				ED7399DB1E46767100006CA8 /* Sources */,
+				ED7399DC1E46767100006CA8 /* Frameworks */,
+				ED7399DD1E46767100006CA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED7399E11E46767100006CA8 /* PBXTargetDependency */,
+			);
+			name = "LuzDeploy Data SamplerTests";
+			productName = "LuzDeploy Data SamplerTests";
+			productReference = ED7399DF1E46767100006CA8 /* LuzDeploy Data SamplerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED7399BB1E46767100006CA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Cole Gleason";
+				TargetAttributes = {
+					ED7399C21E46767100006CA8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = B98QB5W4Z4;
+						ProvisioningStyle = Automatic;
+					};
+					ED7399DE1E46767100006CA8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = B98QB5W4Z4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED7399C21E46767100006CA8;
+					};
+				};
+			};
+			buildConfigurationList = ED7399BE1E46767100006CA8 /* Build configuration list for PBXProject "LuzDeploy Data Sampler" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED7399BA1E46767100006CA8;
+			productRefGroup = ED7399C41E46767100006CA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED7399C21E46767100006CA8 /* LuzDeploy Data Sampler */,
+				ED7399DE1E46767100006CA8 /* LuzDeploy Data SamplerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED7399C11E46767100006CA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED7399D91E46767100006CA8 /* LaunchScreen.storyboard in Resources */,
+				ED7399D61E46767100006CA8 /* Assets.xcassets in Resources */,
+				ED7399D41E46767100006CA8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED7399DD1E46767100006CA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED7399BF1E46767100006CA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED7399CB1E46767100006CA8 /* AppDelegate.m in Sources */,
+				ED7399CE1E46767100006CA8 /* MasterViewController.m in Sources */,
+				ED7399C81E46767100006CA8 /* main.m in Sources */,
+				ED7399D11E46767100006CA8 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED7399DB1E46767100006CA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED7399E41E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED7399E11E46767100006CA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED7399C21E46767100006CA8 /* LuzDeploy Data Sampler */;
+			targetProxy = ED7399E01E46767100006CA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED7399D21E46767100006CA8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED7399D31E46767100006CA8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED7399D71E46767100006CA8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED7399D81E46767100006CA8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED7399E61E46767100006CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED7399E71E46767100006CA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED7399E91E46767100006CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B98QB5W4Z4;
+				INFOPLIST_FILE = "LuzDeploy Data Sampler/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.LuzDeploy-Data-Sampler";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ED7399EA1E46767100006CA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B98QB5W4Z4;
+				INFOPLIST_FILE = "LuzDeploy Data Sampler/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.LuzDeploy-Data-Sampler";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		ED7399EC1E46767100006CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B98QB5W4Z4;
+				INFOPLIST_FILE = "LuzDeploy Data SamplerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.LuzDeploy-Data-SamplerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LuzDeploy Data Sampler.app/LuzDeploy Data Sampler";
+			};
+			name = Debug;
+		};
+		ED7399ED1E46767100006CA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B98QB5W4Z4;
+				INFOPLIST_FILE = "LuzDeploy Data SamplerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.LuzDeploy-Data-SamplerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LuzDeploy Data Sampler.app/LuzDeploy Data Sampler";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED7399BE1E46767100006CA8 /* Build configuration list for PBXProject "LuzDeploy Data Sampler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED7399E61E46767100006CA8 /* Debug */,
+				ED7399E71E46767100006CA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED7399E81E46767100006CA8 /* Build configuration list for PBXNativeTarget "LuzDeploy Data Sampler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED7399E91E46767100006CA8 /* Debug */,
+				ED7399EA1E46767100006CA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED7399EB1E46767100006CA8 /* Build configuration list for PBXNativeTarget "LuzDeploy Data SamplerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED7399EC1E46767100006CA8 /* Debug */,
+				ED7399ED1E46767100006CA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED7399BB1E46767100006CA8 /* Project object */;
+}
