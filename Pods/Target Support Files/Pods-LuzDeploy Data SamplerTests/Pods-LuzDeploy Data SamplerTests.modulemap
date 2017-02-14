@@ -1,0 +1,6 @@
+framework module Pods_LuzDeploy_Data_SamplerTests {
+  umbrella header "Pods-LuzDeploy Data SamplerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

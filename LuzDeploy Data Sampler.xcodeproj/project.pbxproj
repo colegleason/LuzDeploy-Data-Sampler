@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED7399C81E46767100006CA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7399C71E46767100006CA8 /* main.m */; };
-		ED7399CB1E46767100006CA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7399CA1E46767100006CA8 /* AppDelegate.m */; };
-		ED7399CE1E46767100006CA8 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7399CD1E46767100006CA8 /* MasterViewController.m */; };
-		ED7399D11E46767100006CA8 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7399D01E46767100006CA8 /* DetailViewController.m */; };
-		ED7399D41E46767100006CA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7399D21E46767100006CA8 /* Main.storyboard */; };
+		3B9631224A61F5EDE820A4F6 /* Pods_LuzDeploy_Data_Sampler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9113A178483EEC53026C45B /* Pods_LuzDeploy_Data_Sampler.framework */; };
+		84D9A22341C1EBC76EF800B3 /* Pods_LuzDeploy_Data_SamplerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6839C56D7504909869833D7A /* Pods_LuzDeploy_Data_SamplerTests.framework */; };
+		ED6D26FC1E4D1AD5002B91A6 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6D26FB1E4D1AD5002B91A6 /* Utility.swift */; };
+		ED6D27001E4D230E002B91A6 /* SweepParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6D26FF1E4D230E002B91A6 /* SweepParameterView.swift */; };
+		ED7399CB1E46767100006CA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7399CA1E46767100006CA8 /* AppDelegate.swift */; };
 		ED7399D61E46767100006CA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7399D51E46767100006CA8 /* Assets.xcassets */; };
 		ED7399D91E46767100006CA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7399D71E46767100006CA8 /* LaunchScreen.storyboard */; };
 		ED7399E41E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7399E31E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m */; };
+		ED7399F91E4D014100006CA8 /* BeaconSweepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7399F81E4D014100006CA8 /* BeaconSweepViewController.swift */; };
+		EDEC67081E53B9930097A516 /* BeaconSweepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDEC67061E53B9930097A516 /* BeaconSweepViewController.xib */; };
+		EDEC67091E53B9930097A516 /* SweepParameterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDEC67071E53B9930097A516 /* SweepParameterView.xib */; };
+		EDF90E1D1E4E4FE300D7DF21 /* SwiftValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF90E1C1E4E4FE300D7DF21 /* SwiftValidator.framework */; };
+		EDF90E1F1E4E52C000D7DF21 /* ValidationRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF90E1E1E4E52C000D7DF21 /* ValidationRules.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,21 +33,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6839C56D7504909869833D7A /* Pods_LuzDeploy_Data_SamplerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuzDeploy_Data_SamplerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95440487CC09DABAE6E6B56F /* Pods-LuzDeploy Data Sampler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuzDeploy Data Sampler.release.xcconfig"; path = "Pods/Target Support Files/Pods-LuzDeploy Data Sampler/Pods-LuzDeploy Data Sampler.release.xcconfig"; sourceTree = "<group>"; };
+		B9DD1C0746F8DFF766275BCE /* Pods-LuzDeploy Data SamplerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuzDeploy Data SamplerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuzDeploy Data SamplerTests/Pods-LuzDeploy Data SamplerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C2475B240BD54F5403618C7C /* Pods-LuzDeploy Data Sampler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuzDeploy Data Sampler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuzDeploy Data Sampler/Pods-LuzDeploy Data Sampler.debug.xcconfig"; sourceTree = "<group>"; };
+		E9113A178483EEC53026C45B /* Pods_LuzDeploy_Data_Sampler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuzDeploy_Data_Sampler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED6D26FB1E4D1AD5002B91A6 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		ED6D26FF1E4D230E002B91A6 /* SweepParameterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweepParameterView.swift; sourceTree = "<group>"; };
 		ED7399C31E46767100006CA8 /* LuzDeploy Data Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LuzDeploy Data Sampler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7399C71E46767100006CA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ED7399C91E46767100006CA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		ED7399CA1E46767100006CA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		ED7399CC1E46767100006CA8 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		ED7399CD1E46767100006CA8 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		ED7399CF1E46767100006CA8 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		ED7399D01E46767100006CA8 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		ED7399D31E46767100006CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED7399CA1E46767100006CA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED7399D51E46767100006CA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED7399D81E46767100006CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED7399DA1E46767100006CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED7399DF1E46767100006CA8 /* LuzDeploy Data SamplerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LuzDeploy Data SamplerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7399E31E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuzDeploy_Data_SamplerTests.m; sourceTree = "<group>"; };
 		ED7399E51E46767100006CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED7399F81E4D014100006CA8 /* BeaconSweepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconSweepViewController.swift; sourceTree = "<group>"; };
+		EDEC67061E53B9930097A516 /* BeaconSweepViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeaconSweepViewController.xib; sourceTree = "<group>"; };
+		EDEC67071E53B9930097A516 /* SweepParameterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SweepParameterView.xib; sourceTree = "<group>"; };
+		EDF90E1C1E4E4FE300D7DF21 /* SwiftValidator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftValidator.framework; path = "../../Library/Developer/Xcode/DerivedData/LuzDeploy_Data_Sampler-dctysezzwjczyyevymwrjwnmwyvo/Build/Products/Debug-iphonesimulator/SwiftValidator/SwiftValidator.framework"; sourceTree = "<group>"; };
+		EDF90E1E1E4E52C000D7DF21 /* ValidationRules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRules.swift; sourceTree = "<group>"; };
+		F3393D6D722F4B702E37D9BD /* Pods-LuzDeploy Data SamplerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuzDeploy Data SamplerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LuzDeploy Data SamplerTests/Pods-LuzDeploy Data SamplerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF90E1D1E4E4FE300D7DF21 /* SwiftValidator.framework in Frameworks */,
+				3B9631224A61F5EDE820A4F6 /* Pods_LuzDeploy_Data_Sampler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,18 +71,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D9A22341C1EBC76EF800B3 /* Pods_LuzDeploy_Data_SamplerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		805E84BE4D4DD8451FBCAF0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDF90E1C1E4E4FE300D7DF21 /* SwiftValidator.framework */,
+				E9113A178483EEC53026C45B /* Pods_LuzDeploy_Data_Sampler.framework */,
+				6839C56D7504909869833D7A /* Pods_LuzDeploy_Data_SamplerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABAFEE6D2AE0F15601F1B633 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2475B240BD54F5403618C7C /* Pods-LuzDeploy Data Sampler.debug.xcconfig */,
+				95440487CC09DABAE6E6B56F /* Pods-LuzDeploy Data Sampler.release.xcconfig */,
+				B9DD1C0746F8DFF766275BCE /* Pods-LuzDeploy Data SamplerTests.debug.xcconfig */,
+				F3393D6D722F4B702E37D9BD /* Pods-LuzDeploy Data SamplerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ED7399BA1E46767100006CA8 = {
 			isa = PBXGroup;
 			children = (
 				ED7399C51E46767100006CA8 /* LuzDeploy Data Sampler */,
 				ED7399E21E46767100006CA8 /* LuzDeploy Data SamplerTests */,
 				ED7399C41E46767100006CA8 /* Products */,
+				ABAFEE6D2AE0F15601F1B633 /* Pods */,
+				805E84BE4D4DD8451FBCAF0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,13 +122,13 @@
 		ED7399C51E46767100006CA8 /* LuzDeploy Data Sampler */ = {
 			isa = PBXGroup;
 			children = (
-				ED7399C91E46767100006CA8 /* AppDelegate.h */,
-				ED7399CA1E46767100006CA8 /* AppDelegate.m */,
-				ED7399CC1E46767100006CA8 /* MasterViewController.h */,
-				ED7399CD1E46767100006CA8 /* MasterViewController.m */,
-				ED7399CF1E46767100006CA8 /* DetailViewController.h */,
-				ED7399D01E46767100006CA8 /* DetailViewController.m */,
-				ED7399D21E46767100006CA8 /* Main.storyboard */,
+				ED7399F81E4D014100006CA8 /* BeaconSweepViewController.swift */,
+				EDEC67061E53B9930097A516 /* BeaconSweepViewController.xib */,
+				ED6D26FF1E4D230E002B91A6 /* SweepParameterView.swift */,
+				EDEC67071E53B9930097A516 /* SweepParameterView.xib */,
+				ED7399CA1E46767100006CA8 /* AppDelegate.swift */,
+				ED6D26FB1E4D1AD5002B91A6 /* Utility.swift */,
+				EDF90E1E1E4E52C000D7DF21 /* ValidationRules.swift */,
 				ED7399D51E46767100006CA8 /* Assets.xcassets */,
 				ED7399D71E46767100006CA8 /* LaunchScreen.storyboard */,
 				ED7399DA1E46767100006CA8 /* Info.plist */,
@@ -123,9 +161,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED7399E81E46767100006CA8 /* Build configuration list for PBXNativeTarget "LuzDeploy Data Sampler" */;
 			buildPhases = (
+				FADE27B0BAC73186A1F93895 /* [CP] Check Pods Manifest.lock */,
 				ED7399BF1E46767100006CA8 /* Sources */,
 				ED7399C01E46767100006CA8 /* Frameworks */,
 				ED7399C11E46767100006CA8 /* Resources */,
+				2A586222E0047444501232DF /* [CP] Embed Pods Frameworks */,
+				E2878302E79F63C41D260FA2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED7399EB1E46767100006CA8 /* Build configuration list for PBXNativeTarget "LuzDeploy Data SamplerTests" */;
 			buildPhases = (
+				3D889D79F8D6EBFCD0BD93D4 /* [CP] Check Pods Manifest.lock */,
 				ED7399DB1E46767100006CA8 /* Sources */,
 				ED7399DC1E46767100006CA8 /* Frameworks */,
 				ED7399DD1E46767100006CA8 /* Resources */,
+				61D9FE9810BDF9974ED378B0 /* [CP] Embed Pods Frameworks */,
+				5E5B3B433C1EBE91B06F082B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,7 +210,13 @@
 					ED7399C21E46767100006CA8 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = B98QB5W4Z4;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					ED7399DE1E46767100006CA8 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -200,9 +250,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDEC67091E53B9930097A516 /* SweepParameterView.xib in Resources */,
 				ED7399D91E46767100006CA8 /* LaunchScreen.storyboard in Resources */,
+				EDEC67081E53B9930097A516 /* BeaconSweepViewController.xib in Resources */,
 				ED7399D61E46767100006CA8 /* Assets.xcassets in Resources */,
-				ED7399D41E46767100006CA8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,15 +266,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A586222E0047444501232DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LuzDeploy Data Sampler/Pods-LuzDeploy Data Sampler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D889D79F8D6EBFCD0BD93D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5E5B3B433C1EBE91B06F082B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LuzDeploy Data SamplerTests/Pods-LuzDeploy Data SamplerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61D9FE9810BDF9974ED378B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LuzDeploy Data SamplerTests/Pods-LuzDeploy Data SamplerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2878302E79F63C41D260FA2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LuzDeploy Data Sampler/Pods-LuzDeploy Data Sampler-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FADE27B0BAC73186A1F93895 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED7399BF1E46767100006CA8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED7399CB1E46767100006CA8 /* AppDelegate.m in Sources */,
-				ED7399CE1E46767100006CA8 /* MasterViewController.m in Sources */,
-				ED7399C81E46767100006CA8 /* main.m in Sources */,
-				ED7399D11E46767100006CA8 /* DetailViewController.m in Sources */,
+				ED7399CB1E46767100006CA8 /* AppDelegate.swift in Sources */,
+				EDF90E1F1E4E52C000D7DF21 /* ValidationRules.swift in Sources */,
+				ED6D27001E4D230E002B91A6 /* SweepParameterView.swift in Sources */,
+				ED6D26FC1E4D1AD5002B91A6 /* Utility.swift in Sources */,
+				ED7399F91E4D014100006CA8 /* BeaconSweepViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,14 +391,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ED7399D21E46767100006CA8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED7399D31E46767100006CA8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ED7399D71E46767100006CA8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -357,31 +494,42 @@
 		};
 		ED7399E91E46767100006CA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2475B240BD54F5403618C7C /* Pods-LuzDeploy Data Sampler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = B98QB5W4Z4;
 				INFOPLIST_FILE = "LuzDeploy Data Sampler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.LuzDeploy-Data-Sampler";
+				PRODUCT_BUNDLE_IDENTIFIER = CMU.LuzDeploy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		ED7399EA1E46767100006CA8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95440487CC09DABAE6E6B56F /* Pods-LuzDeploy Data Sampler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = B98QB5W4Z4;
 				INFOPLIST_FILE = "LuzDeploy Data Sampler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.LuzDeploy-Data-Sampler";
+				PRODUCT_BUNDLE_IDENTIFIER = CMU.LuzDeploy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		ED7399EC1E46767100006CA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DD1C0746F8DFF766275BCE /* Pods-LuzDeploy Data SamplerTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = B98QB5W4Z4;
 				INFOPLIST_FILE = "LuzDeploy Data SamplerTests/Info.plist";
@@ -394,7 +542,9 @@
 		};
 		ED7399ED1E46767100006CA8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3393D6D722F4B702E37D9BD /* Pods-LuzDeploy Data SamplerTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = B98QB5W4Z4;
 				INFOPLIST_FILE = "LuzDeploy Data SamplerTests/Info.plist";
@@ -424,6 +574,7 @@
 				ED7399EA1E46767100006CA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED7399EB1E46767100006CA8 /* Build configuration list for PBXNativeTarget "LuzDeploy Data SamplerTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +583,7 @@
 				ED7399ED1E46767100006CA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
