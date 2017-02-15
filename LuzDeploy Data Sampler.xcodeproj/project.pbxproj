@@ -10,14 +10,13 @@
 		3B9631224A61F5EDE820A4F6 /* Pods_LuzDeploy_Data_Sampler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9113A178483EEC53026C45B /* Pods_LuzDeploy_Data_Sampler.framework */; };
 		84D9A22341C1EBC76EF800B3 /* Pods_LuzDeploy_Data_SamplerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6839C56D7504909869833D7A /* Pods_LuzDeploy_Data_SamplerTests.framework */; };
 		ED6D26FC1E4D1AD5002B91A6 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6D26FB1E4D1AD5002B91A6 /* Utility.swift */; };
-		ED6D27001E4D230E002B91A6 /* SweepParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6D26FF1E4D230E002B91A6 /* SweepParameterView.swift */; };
+		ED6D27001E4D230E002B91A6 /* SweepParameterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6D26FF1E4D230E002B91A6 /* SweepParameterViewController.swift */; };
 		ED7399CB1E46767100006CA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7399CA1E46767100006CA8 /* AppDelegate.swift */; };
 		ED7399D61E46767100006CA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7399D51E46767100006CA8 /* Assets.xcassets */; };
 		ED7399D91E46767100006CA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7399D71E46767100006CA8 /* LaunchScreen.storyboard */; };
 		ED7399E41E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7399E31E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m */; };
 		ED7399F91E4D014100006CA8 /* BeaconSweepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7399F81E4D014100006CA8 /* BeaconSweepViewController.swift */; };
-		EDEC67081E53B9930097A516 /* BeaconSweepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDEC67061E53B9930097A516 /* BeaconSweepViewController.xib */; };
-		EDEC67091E53B9930097A516 /* SweepParameterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDEC67071E53B9930097A516 /* SweepParameterView.xib */; };
+		EDEC670B1E54F0980097A516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEC670A1E54F0980097A516 /* Main.storyboard */; };
 		EDF90E1D1E4E4FE300D7DF21 /* SwiftValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF90E1C1E4E4FE300D7DF21 /* SwiftValidator.framework */; };
 		EDF90E1F1E4E52C000D7DF21 /* ValidationRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF90E1E1E4E52C000D7DF21 /* ValidationRules.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +38,7 @@
 		C2475B240BD54F5403618C7C /* Pods-LuzDeploy Data Sampler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuzDeploy Data Sampler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuzDeploy Data Sampler/Pods-LuzDeploy Data Sampler.debug.xcconfig"; sourceTree = "<group>"; };
 		E9113A178483EEC53026C45B /* Pods_LuzDeploy_Data_Sampler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuzDeploy_Data_Sampler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6D26FB1E4D1AD5002B91A6 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		ED6D26FF1E4D230E002B91A6 /* SweepParameterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweepParameterView.swift; sourceTree = "<group>"; };
+		ED6D26FF1E4D230E002B91A6 /* SweepParameterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweepParameterViewController.swift; sourceTree = "<group>"; };
 		ED7399C31E46767100006CA8 /* LuzDeploy Data Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LuzDeploy Data Sampler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7399C71E46767100006CA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ED7399CA1E46767100006CA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,8 +49,7 @@
 		ED7399E31E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuzDeploy_Data_SamplerTests.m; sourceTree = "<group>"; };
 		ED7399E51E46767100006CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED7399F81E4D014100006CA8 /* BeaconSweepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconSweepViewController.swift; sourceTree = "<group>"; };
-		EDEC67061E53B9930097A516 /* BeaconSweepViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeaconSweepViewController.xib; sourceTree = "<group>"; };
-		EDEC67071E53B9930097A516 /* SweepParameterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SweepParameterView.xib; sourceTree = "<group>"; };
+		EDEC670A1E54F0980097A516 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EDF90E1C1E4E4FE300D7DF21 /* SwiftValidator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftValidator.framework; path = "../../Library/Developer/Xcode/DerivedData/LuzDeploy_Data_Sampler-dctysezzwjczyyevymwrjwnmwyvo/Build/Products/Debug-iphonesimulator/SwiftValidator/SwiftValidator.framework"; sourceTree = "<group>"; };
 		EDF90E1E1E4E52C000D7DF21 /* ValidationRules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRules.swift; sourceTree = "<group>"; };
 		F3393D6D722F4B702E37D9BD /* Pods-LuzDeploy Data SamplerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuzDeploy Data SamplerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LuzDeploy Data SamplerTests/Pods-LuzDeploy Data SamplerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,13 +121,12 @@
 			isa = PBXGroup;
 			children = (
 				ED7399F81E4D014100006CA8 /* BeaconSweepViewController.swift */,
-				EDEC67061E53B9930097A516 /* BeaconSweepViewController.xib */,
-				ED6D26FF1E4D230E002B91A6 /* SweepParameterView.swift */,
-				EDEC67071E53B9930097A516 /* SweepParameterView.xib */,
+				ED6D26FF1E4D230E002B91A6 /* SweepParameterViewController.swift */,
 				ED7399CA1E46767100006CA8 /* AppDelegate.swift */,
 				ED6D26FB1E4D1AD5002B91A6 /* Utility.swift */,
 				EDF90E1E1E4E52C000D7DF21 /* ValidationRules.swift */,
 				ED7399D51E46767100006CA8 /* Assets.xcassets */,
+				EDEC670A1E54F0980097A516 /* Main.storyboard */,
 				ED7399D71E46767100006CA8 /* LaunchScreen.storyboard */,
 				ED7399DA1E46767100006CA8 /* Info.plist */,
 				ED7399C61E46767100006CA8 /* Supporting Files */,
@@ -250,9 +247,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDEC67091E53B9930097A516 /* SweepParameterView.xib in Resources */,
+				EDEC670B1E54F0980097A516 /* Main.storyboard in Resources */,
 				ED7399D91E46767100006CA8 /* LaunchScreen.storyboard in Resources */,
-				EDEC67081E53B9930097A516 /* BeaconSweepViewController.xib in Resources */,
 				ED7399D61E46767100006CA8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +362,7 @@
 			files = (
 				ED7399CB1E46767100006CA8 /* AppDelegate.swift in Sources */,
 				EDF90E1F1E4E52C000D7DF21 /* ValidationRules.swift in Sources */,
-				ED6D27001E4D230E002B91A6 /* SweepParameterView.swift in Sources */,
+				ED6D27001E4D230E002B91A6 /* SweepParameterViewController.swift in Sources */,
 				ED6D26FC1E4D1AD5002B91A6 /* Utility.swift in Sources */,
 				ED7399F91E4D014100006CA8 /* BeaconSweepViewController.swift in Sources */,
 			);
@@ -505,7 +501,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -521,7 +517,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = CMU.LuzDeploy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

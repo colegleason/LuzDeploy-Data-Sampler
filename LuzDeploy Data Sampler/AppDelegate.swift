@@ -15,9 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        window?.rootViewController = SweepParameterView()
-        self.window?.makeKeyAndVisible()
         return true
     }
     
@@ -49,22 +46,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func runScanBeacons(_ dict: [String: String]) {
-        let vc = BeaconSweepViewController(
-            uuid: UUID(uuidString: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E")!,
-            majorId: Int(dict["major"]!)!,
-            minorIds: Utility.beaconListToSet(beaconList: dict["beacons"]!),
-            edgeId: Int(dict["edge"]!)!,
-            startNode: Int(dict["start"]!)!,
-            endNode: Int(dict["end"]!)!
-        )
-        vc.nextURI = URL(string: dict["next"]!)
-        vc.workerId = Int(dict["wid"]!)
-        if dict["base"] != nil {
-            vc.baseURL = dict["base"]!
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let beaconSweeper = storyboard.instantiateViewController(withIdentifier: BeaconSweepViewController.storyboardId) as? BeaconSweepViewController {
+            
+            beaconSweeper.uuid = UUID(uuidString: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E")!
+            beaconSweeper.majorId = Int(dict["major"] ?? "")
+            beaconSweeper.beaconMinors = Utility.beaconListToSet(beaconList: dict["beacons"] ?? "")
+            beaconSweeper.edgeId = Int(dict["edge"] ?? "")
+            beaconSweeper.startNode = Int(dict["start"] ?? "")
+            beaconSweeper.endNode = Int(dict["end"] ?? "")
+            beaconSweeper.nextURI = URL(string: dict["next"] ?? "")
+            beaconSweeper.workerId = Int(dict["wid"] ?? "")
+            if let baseUrl = dict["base"] {
+                beaconSweeper.baseURL = baseUrl
+            }
+            (window?.rootViewController as? UINavigationController)?.pushViewController(beaconSweeper, animated: true)
         }
-        self.window?.rootViewController?.addChildViewController(vc)
-        self.window?.rootViewController?.view.addSubview(vc.view)
-
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

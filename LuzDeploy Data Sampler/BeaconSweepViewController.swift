@@ -12,17 +12,19 @@ import CoreLocation
 
 class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UIWebViewDelegate {
     // required
-    var uuid: UUID!
-    var majorId: Int!
-    var edgeId: Int!
-    var startNode: Int!
-    var endNode: Int!
+    var uuid: UUID?
+    var majorId: Int?
+    var edgeId: Int?
+    var startNode: Int?
+    var endNode: Int?
     var beaconMinors = Set<Int>()
     // optional
     var nextURI: URL?
     var workerId: Int?
     var baseURL = "https://luzdeploy-prod.herokuapp.com"
 
+    
+    static let storyboardId = "BeaconSweeper"
     private let beaconManager = CLLocationManager()
     private var presentBeaconMinors = Set<Int>()
     private var isRangingBeacon = false
@@ -33,29 +35,6 @@ class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UI
     @IBOutlet weak var statusLabel: UILabel?
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var instructions: UILabel?
-    
-    init(uuid: UUID, majorId: Int, minorIds: Set<Int>, edgeId: Int, startNode: Int, endNode: Int, workerId: Int? = nil, nextURI: URL? = nil) {
-        self.uuid = uuid
-        self.majorId = majorId
-        beaconMinors = minorIds
-        self.edgeId = edgeId
-        self.startNode = startNode
-        self.endNode = endNode
-        
-        beaconRegion = CLBeaconRegion(
-            proximityUUID: self.uuid,
-            major: CLBeaconMajorValue(self.majorId),
-            identifier: "cmaccess"
-        )
-        
-        self.mapURL = URL(string: "\(self.baseURL)/map/?advanced&hidden&edge=\(self.edgeId!)")!
-        
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
     
     func setupBeaconManager() {
         let authstate = CLLocationManager.authorizationStatus()
@@ -72,10 +51,19 @@ class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UI
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        beaconRegion = CLBeaconRegion(
+            proximityUUID: self.uuid!,
+            major: CLBeaconMajorValue(self.majorId!),
+            identifier: "cmaccess"
+        )
+        
+        self.mapURL = URL(string: "\(self.baseURL)/map/?advanced&hidden&edge=\(self.edgeId!)")!
         self.webView.loadRequest(URLRequest(url: mapURL!))
         self.statusLabel?.text = "Status: Not Scanning"
         self.instructions?.text = "Go to node \(self.startNode!) in the map above. Then press the start button below."
         self.startButton?.setTitle("Start scanning", for: .normal)
+    
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -95,7 +83,11 @@ class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UI
         request.addValue(postLength, forHTTPHeaderField: "Content-Length")
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpBody = postData
-        Utility.makeRequest(request: request)
+        Utility.makeRequest(request: request) { _ in
+            DispatchQueue.main.async {
+                _ = self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
     
     func sendData() {
@@ -128,9 +120,10 @@ class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UI
             self.statusLabel?.text = "Status: Uploading"
             self.sendData()
             self.startButton?.setTitle("Start scanning", for: .normal)
-            self.view.removeFromSuperview()
             if self.workerId != nil {
                 self.doneWebhook()
+            } else {
+               _ = self.navigationController?.popViewController(animated: true)
             }
             if self.nextURI != nil {
                 Utility.openURL(url: self.nextURI!)

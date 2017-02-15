@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftValidator
 
-class SweepParameterView : UIViewController, ValidationDelegate, UITextFieldDelegate {
+class SweepParameterViewController : UIViewController, ValidationDelegate, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var majorIdField: UITextField!
     @IBOutlet weak var minorIdListField: UITextField!
@@ -26,7 +26,7 @@ class SweepParameterView : UIViewController, ValidationDelegate, UITextFieldDele
     @IBOutlet weak var uuidErrorLabel: UILabel!
     let validator = Validator()
     private var activeTextField: UITextField?
-    
+    static let beaconSweepVCSegue = "toBeaconSweeper"
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -120,16 +120,19 @@ class SweepParameterView : UIViewController, ValidationDelegate, UITextFieldDele
     
     func validationSuccessful() {
         print("Validation Successful")
-        let beaconSweepView = BeaconSweepViewController(
-            uuid: UUID(uuidString: uuidField.text!)!,
-            majorId: Int(majorIdField.text!)!,
-            minorIds: Utility.beaconListToSet(beaconList: minorIdListField.text!),
-            edgeId: Int(edgeIdField.text!)!,
-            startNode: Int(startNodeField.text!)!,
-            endNode: Int(endNodeField.text!)!
-        )
-        self.addChildViewController(beaconSweepView)
-        self.view.addSubview(beaconSweepView.view)
+        performSegue(withIdentifier: SweepParameterViewController.beaconSweepVCSegue, sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SweepParameterViewController.beaconSweepVCSegue {
+            let destination = segue.destination as? BeaconSweepViewController
+            destination?.uuid = UUID(uuidString: uuidField.text ?? "")
+            destination?.majorId = Int(majorIdField.text ?? "")
+            destination?.beaconMinors = Utility.beaconListToSet(beaconList: minorIdListField.text ?? "")
+            destination?.edgeId = Int(edgeIdField.text ?? "")
+            destination?.startNode = Int(startNodeField.text ?? "")
+            destination?.endNode = Int(endNodeField.text ?? "")
+        }
     }
     
     func validationFailed(_ errors:[(Validatable ,ValidationError)]) {
