@@ -18,12 +18,7 @@ class SweepParameterViewController : UIViewController, ValidationDelegate {
     @IBOutlet weak var startNodeField: UITextField!
     @IBOutlet weak var endNodeField: UITextField!
     @IBOutlet weak var uuidField: UITextField!
-    @IBOutlet weak var majorIdErrorLabel: UILabel!
-    @IBOutlet weak var minorIdListErrorLabel: UILabel!
-    @IBOutlet weak var edgeIdErrorLabel: UILabel!
-    @IBOutlet weak var startNodeErrorLabel: UILabel!
-    @IBOutlet weak var endNodeErrorLabel: UILabel!
-    @IBOutlet weak var uuidErrorLabel: UILabel!
+
     let validator = Validator()
     static let beaconSweepVCSegue = "toBeaconSweeper"
     private var textFieldDelegate: ActiveTextFieldDelegate?
@@ -31,12 +26,12 @@ class SweepParameterViewController : UIViewController, ValidationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        validator.registerField(majorIdField, errorLabel: majorIdErrorLabel, rules: [PositiveIntRule()])
-        validator.registerField(minorIdListField, errorLabel: minorIdListErrorLabel, rules: [BeaconListRule()])
-        validator.registerField(edgeIdField, errorLabel: edgeIdErrorLabel ,rules: [PositiveIntRule()])
-        validator.registerField(startNodeField, errorLabel: startNodeErrorLabel, rules: [PositiveIntRule()])
-        validator.registerField(endNodeField, errorLabel: endNodeErrorLabel, rules: [PositiveIntRule()])
-        validator.registerField(uuidField, errorLabel: uuidErrorLabel , rules: [UUIDRule()])
+        validator.registerField(majorIdField, rules: [PositiveIntRule()])
+        validator.registerField(minorIdListField, rules: [BeaconListRule()])
+        validator.registerField(edgeIdField,rules: [PositiveIntRule()])
+        validator.registerField(startNodeField, rules: [PositiveIntRule()])
+        validator.registerField(endNodeField, rules: [PositiveIntRule()])
+        validator.registerField(uuidField, rules: [UUIDRule()])
         
         textFieldDelegate = ActiveTextFieldDelegate()
         majorIdField.delegate = textFieldDelegate
