@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftValidator
 
-class SweepParameterViewController : UIViewController, ValidationDelegate, UITextFieldDelegate {
+class SweepParameterViewController : UIViewController, ValidationDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var majorIdField: UITextField!
     @IBOutlet weak var minorIdListField: UITextField!
@@ -25,8 +25,9 @@ class SweepParameterViewController : UIViewController, ValidationDelegate, UITex
     @IBOutlet weak var endNodeErrorLabel: UILabel!
     @IBOutlet weak var uuidErrorLabel: UILabel!
     let validator = Validator()
-    private var activeTextField: UITextField?
     static let beaconSweepVCSegue = "toBeaconSweeper"
+    private var textFieldDelegate: ActiveTextFieldDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,12 +38,13 @@ class SweepParameterViewController : UIViewController, ValidationDelegate, UITex
         validator.registerField(endNodeField, errorLabel: endNodeErrorLabel, rules: [PositiveIntRule()])
         validator.registerField(uuidField, errorLabel: uuidErrorLabel , rules: [UUIDRule()])
         
-        majorIdField.delegate = self
-        minorIdListField.delegate = self
-        uuidField.delegate = self
-        edgeIdField.delegate = self
-        startNodeField.delegate = self
-        endNodeField.delegate = self
+        textFieldDelegate = ActiveTextFieldDelegate()
+        majorIdField.delegate = textFieldDelegate
+        minorIdListField.delegate = textFieldDelegate
+        uuidField.delegate = textFieldDelegate
+        edgeIdField.delegate = textFieldDelegate
+        startNodeField.delegate = textFieldDelegate
+        endNodeField.delegate = textFieldDelegate
         
         self.registerForKeyboardNotifications()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -85,14 +87,10 @@ class SweepParameterViewController : UIViewController, ValidationDelegate, UITex
         // Your app might not need or want this behavior.
         var aRect = self.view.frame
         aRect.size.height -= keyboardSize.height
-        if (!aRect.contains((activeTextField?.frame.origin)!)) {
-            scrollView.scrollRectToVisible(activeTextField!.frame, animated:true)
+        let field = textFieldDelegate?.activeTextField
+        if (!aRect.contains((field?.frame.origin)!)) {
+            scrollView.scrollRectToVisible(field!.frame, animated:true)
         }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
     
     // Called when the UIKeyboardWillHideNotification is sent
@@ -101,17 +99,6 @@ class SweepParameterViewController : UIViewController, ValidationDelegate, UITex
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
     }
-
-    //MARK: - UITextField Delegate Methods
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        activeTextField = textField
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        activeTextField = nil
-    }
-
     
     @IBAction func buttonPressed() {
         validator.validate(self)
