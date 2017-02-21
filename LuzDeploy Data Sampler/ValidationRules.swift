@@ -25,6 +25,14 @@ class PositiveIntRule : RegexRule {
     }
 }
 
+class WholeIntRule : RegexRule {
+    static let regex = "^\\d+$"
+    
+    convenience init(message : String = "Must be a 0 or positive integer."){
+        self.init(regex: PositiveIntRule.regex, message : message)
+    }
+}
+
 class BeaconListRule : RegexRule {
     static let regex = "^\\s*\\d+(?:-\\d+)?\\s*(?:,\\s*\\d+(?:-\\d+)?\\s*)*$"
     

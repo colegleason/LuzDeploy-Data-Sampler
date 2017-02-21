@@ -16,6 +16,10 @@
 		ED7399D91E46767100006CA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7399D71E46767100006CA8 /* LaunchScreen.storyboard */; };
 		ED7399E41E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7399E31E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m */; };
 		ED7399F91E4D014100006CA8 /* BeaconSweepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7399F81E4D014100006CA8 /* BeaconSweepViewController.swift */; };
+		ED8B35C71E578C9F005783EB /* FingerptintParameterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B35C61E578C9F005783EB /* FingerptintParameterViewController.swift */; };
+		ED8B35C91E578E2A005783EB /* ActiveTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B35C81E578E2A005783EB /* ActiveTextFieldDelegate.swift */; };
+		ED8B35CD1E57A6F5005783EB /* FingerprintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B35CC1E57A6F5005783EB /* FingerprintViewController.swift */; };
+		ED8B35CF1E57A7D5005783EB /* FingerprintTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B35CE1E57A7D5005783EB /* FingerprintTypes.swift */; };
 		EDEC670B1E54F0980097A516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEC670A1E54F0980097A516 /* Main.storyboard */; };
 		EDF90E1D1E4E4FE300D7DF21 /* SwiftValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF90E1C1E4E4FE300D7DF21 /* SwiftValidator.framework */; };
 		EDF90E1F1E4E52C000D7DF21 /* ValidationRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF90E1E1E4E52C000D7DF21 /* ValidationRules.swift */; };
@@ -49,6 +53,10 @@
 		ED7399E31E46767100006CA8 /* LuzDeploy_Data_SamplerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuzDeploy_Data_SamplerTests.m; sourceTree = "<group>"; };
 		ED7399E51E46767100006CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED7399F81E4D014100006CA8 /* BeaconSweepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconSweepViewController.swift; sourceTree = "<group>"; };
+		ED8B35C61E578C9F005783EB /* FingerptintParameterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerptintParameterViewController.swift; sourceTree = "<group>"; };
+		ED8B35C81E578E2A005783EB /* ActiveTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveTextFieldDelegate.swift; sourceTree = "<group>"; };
+		ED8B35CC1E57A6F5005783EB /* FingerprintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerprintViewController.swift; sourceTree = "<group>"; };
+		ED8B35CE1E57A7D5005783EB /* FingerprintTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerprintTypes.swift; sourceTree = "<group>"; };
 		EDEC670A1E54F0980097A516 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EDF90E1C1E4E4FE300D7DF21 /* SwiftValidator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftValidator.framework; path = "../../Library/Developer/Xcode/DerivedData/LuzDeploy_Data_Sampler-dctysezzwjczyyevymwrjwnmwyvo/Build/Products/Debug-iphonesimulator/SwiftValidator/SwiftValidator.framework"; sourceTree = "<group>"; };
 		EDF90E1E1E4E52C000D7DF21 /* ValidationRules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRules.swift; sourceTree = "<group>"; };
@@ -122,6 +130,8 @@
 			children = (
 				ED7399F81E4D014100006CA8 /* BeaconSweepViewController.swift */,
 				ED6D26FF1E4D230E002B91A6 /* SweepParameterViewController.swift */,
+				ED8B35C61E578C9F005783EB /* FingerptintParameterViewController.swift */,
+				ED8B35CC1E57A6F5005783EB /* FingerprintViewController.swift */,
 				ED7399CA1E46767100006CA8 /* AppDelegate.swift */,
 				ED6D26FB1E4D1AD5002B91A6 /* Utility.swift */,
 				EDF90E1E1E4E52C000D7DF21 /* ValidationRules.swift */,
@@ -130,6 +140,8 @@
 				ED7399D71E46767100006CA8 /* LaunchScreen.storyboard */,
 				ED7399DA1E46767100006CA8 /* Info.plist */,
 				ED7399C61E46767100006CA8 /* Supporting Files */,
+				ED8B35C81E578E2A005783EB /* ActiveTextFieldDelegate.swift */,
+				ED8B35CE1E57A7D5005783EB /* FingerprintTypes.swift */,
 			);
 			path = "LuzDeploy Data Sampler";
 			sourceTree = "<group>";
@@ -360,11 +372,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8B35C91E578E2A005783EB /* ActiveTextFieldDelegate.swift in Sources */,
+				ED8B35CD1E57A6F5005783EB /* FingerprintViewController.swift in Sources */,
 				ED7399CB1E46767100006CA8 /* AppDelegate.swift in Sources */,
 				EDF90E1F1E4E52C000D7DF21 /* ValidationRules.swift in Sources */,
 				ED6D27001E4D230E002B91A6 /* SweepParameterViewController.swift in Sources */,
 				ED6D26FC1E4D1AD5002B91A6 /* Utility.swift in Sources */,
 				ED7399F91E4D014100006CA8 /* BeaconSweepViewController.swift in Sources */,
+				ED8B35C71E578C9F005783EB /* FingerptintParameterViewController.swift in Sources */,
+				ED8B35CF1E57A7D5005783EB /* FingerprintTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

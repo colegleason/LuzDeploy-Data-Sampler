@@ -1,8 +1,8 @@
 //
-//  DataParameterView.swift
+//  FingerptintParameterViewController.swift
 //  LuzDeploy Data Sampler
 //
-//  Created by Cole Gleason on 2/9/17.
+//  Created by Cole Gleason on 2/17/17.
 //  Copyright © 2017 Cole Gleason. All rights reserved.
 //
 
@@ -10,59 +10,47 @@ import Foundation
 import UIKit
 import SwiftValidator
 
-class SweepParameterViewController : UIViewController, ValidationDelegate {
+class FingerprintParameterViewController : UIViewController, ValidationDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var majorIdField: UITextField!
     @IBOutlet weak var majorIdError: UILabel!
-    @IBOutlet weak var minorIdListField: UITextField!
-    @IBOutlet weak var minorIdError: UILabel!
-    @IBOutlet weak var edgeIdField: UITextField!
-    @IBOutlet weak var edgeError: UILabel!
-    @IBOutlet weak var startNodeField: UITextField!
-    @IBOutlet weak var startError: UILabel!
-    @IBOutlet weak var endNodeField: UITextField!
-    @IBOutlet weak var endError: UILabel!
+    @IBOutlet weak var latField: UITextField!
+    @IBOutlet weak var latError: UILabel!
+    @IBOutlet weak var longField: UITextField!
+    @IBOutlet weak var longError: UILabel!
+    @IBOutlet weak var floorField: UITextField!
+    @IBOutlet weak var floorError: UILabel!
     @IBOutlet weak var uuidField: UITextField!
     @IBOutlet weak var uuidError: UILabel!
-
     let validator = Validator()
-    static let beaconSweepVCSegue = "toBeaconSweeper"
     private var textFieldDelegate: ActiveTextFieldDelegate?
+    static let fingerprintVCSegue = "toFingerprinter"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         validator.registerField(majorIdField, errorLabel: majorIdError, rules: [PositiveIntRule()])
-        validator.registerField(minorIdListField, errorLabel: minorIdError, rules: [BeaconListRule()])
-        validator.registerField(edgeIdField, errorLabel: edgeError, rules: [PositiveIntRule()])
-        validator.registerField(startNodeField, errorLabel: startError, rules: [PositiveIntRule()])
-        validator.registerField(endNodeField, errorLabel: endError, rules: [PositiveIntRule()])
+        validator.registerField(latField, errorLabel: latError, rules: [FloatRule()])
+        validator.registerField(longField, errorLabel: longError, rules: [FloatRule()])
+        validator.registerField(floorField, errorLabel: floorError, rules: [PositiveIntRule()])
         validator.registerField(uuidField, errorLabel: uuidError, rules: [UUIDRule()])
         
         majorIdError.isHidden = true
-        minorIdError.isHidden = true
-        edgeError.isHidden = true
-        startError.isHidden = true
-        endError.isHidden = true
+        latError.isHidden = true
+        longError.isHidden = true
+        floorError.isHidden = true
         uuidError.isHidden = true
         
         textFieldDelegate = ActiveTextFieldDelegate()
         majorIdField.delegate = textFieldDelegate
-        minorIdListField.delegate = textFieldDelegate
+        floorField.delegate = textFieldDelegate
         uuidField.delegate = textFieldDelegate
-        edgeIdField.delegate = textFieldDelegate
-        startNodeField.delegate = textFieldDelegate
-        endNodeField.delegate = textFieldDelegate
+        latField.delegate = textFieldDelegate
+        longField.delegate = textFieldDelegate
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
-    
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -74,11 +62,15 @@ class SweepParameterViewController : UIViewController, ValidationDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     //MARK: - Keyboard Management Methods
     
     // Call this method somewhere in your view controller setup code.
     func registerForKeyboardNotifications() {
-
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillBeShown),
@@ -125,18 +117,21 @@ class SweepParameterViewController : UIViewController, ValidationDelegate {
     
     func validationSuccessful() {
         print("Validation Successful")
-        performSegue(withIdentifier: SweepParameterViewController.beaconSweepVCSegue, sender: nil)
+        performSegue(withIdentifier: FingerprintParameterViewController.fingerprintVCSegue, sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SweepParameterViewController.beaconSweepVCSegue {
-            let destination = segue.destination as? BeaconSweepViewController
+        if segue.identifier == FingerprintParameterViewController.fingerprintVCSegue {
+            let destination = segue.destination as? FingerprintViewController
+            destination?.fingerprintLocations = [
+                FingerprintLocation(
+                    floor: Int(floorField.text ?? "") ?? 0,
+                    lat: Double(latField.text ?? "") ?? 0,
+                    long: Double(longField.text ?? "") ?? 0
+                )
+            ]
             destination?.uuid = UUID(uuidString: uuidField.text ?? "")
             destination?.majorId = Int(majorIdField.text ?? "")
-            destination?.beaconMinors = Utility.beaconListToSet(beaconList: minorIdListField.text ?? "")
-            destination?.edgeId = Int(edgeIdField.text ?? "")
-            destination?.startNode = Int(startNodeField.text ?? "")
-            destination?.endNode = Int(endNodeField.text ?? "")
         }
     }
     
