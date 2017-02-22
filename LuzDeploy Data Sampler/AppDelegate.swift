@@ -40,11 +40,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("query dict: \(dict)")
         if (url.host == "beaconsweeper") {
             self.runScanBeacons(dict)
+        } else if (url.host == "datasampler") {
+            self.runFingerprinting(dict)
         }
         
         return true
     }
     
+    // luzdeploy://datasampler?major=65535&locations=3,-10,10;4,-9,9&wid=1
+    func runFingerprinting(_ dict: [String: String]) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let fingerprinter = storyboard.instantiateViewController(withIdentifier: FingerprintViewController.storyboardId) as? FingerprintViewController {
+            fingerprinter.uuid = UUID(uuidString: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E")!
+            fingerprinter.majorId = Int(dict["major"] ?? "")
+            fingerprinter.fingerprintLocations = Utility.queryParamToLocations(param: dict["locations"] ?? "")
+            fingerprinter.nextURI = URL(string: dict["next"] ?? "")
+            fingerprinter.workerId = Int(dict["wid"] ?? "")
+            if let baseUrl = dict["base"] {
+                fingerprinter.baseURL = baseUrl
+            }
+            let tabVC = window?.rootViewController as? UITabBarController
+            tabVC?.selectedIndex = 1
+            let navVC: UINavigationController = tabVC?.selectedViewController as! UINavigationController
+            navVC.pushViewController(fingerprinter, animated: true)
+        }
+    }
+    
+    // luzdeploy://beaconsweeper?major=65535&beacons=1,2&edge=1&start=1&end=2&wid=1
     func runScanBeacons(_ dict: [String: String]) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let beaconSweeper = storyboard.instantiateViewController(withIdentifier: BeaconSweepViewController.storyboardId) as? BeaconSweepViewController {
@@ -60,7 +82,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let baseUrl = dict["base"] {
                 beaconSweeper.baseURL = baseUrl
             }
-            (window?.rootViewController as? UINavigationController)?.pushViewController(beaconSweeper, animated: true)
+            let tabVC = window?.rootViewController as? UITabBarController
+            tabVC?.selectedIndex = 0
+            let navVC: UINavigationController = tabVC?.selectedViewController as! UINavigationController
+            navVC.pushViewController(beaconSweeper, animated: true)
         }
     }
     

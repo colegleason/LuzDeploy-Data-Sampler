@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import CoreLocation
+import CoreBluetooth
 
-class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UIWebViewDelegate {
+class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UIWebViewDelegate, CBCentralManagerDelegate {
 
     // required
     var uuid: UUID?
@@ -24,6 +25,7 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
     var fingerprintSampleTime = 5.0 // seconds
     
     private let beaconManager = CLLocationManager()
+    private var bluetoothManager: CBCentralManager?
     private var isRangingBeacon = false
     private var beaconRegion: CLBeaconRegion?
     private var fingerprints = [Fingerprint]()
@@ -36,8 +38,11 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var instructions: UILabel?
     
+    static let storyboardId = "Fingerprinter"
+    
     func loadMap(forLocation location: FingerprintLocation) {
-        let mapURL = URL(string: "\(self.baseURL)/map/?advanced&hidden&floor=\(location.floor)&lat=\(location.lat)&long=\(location.long)")!
+        let mapURL = URL(string: "\(self.baseURL)/map/?advanced&hidden&layer=\(location.floor)&lat=\(location.lat)&long=\(location.long)")!
+        print("\(mapURL)")
         self.webView.loadRequest(URLRequest(url: mapURL))
     }
     
@@ -54,6 +59,8 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
         }
         self.beaconManager.delegate = self
         self.beaconManager.pausesLocationUpdatesAutomatically = false
+        
+        self.bluetoothManager = CBCentralManager.init(delegate: self, queue: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true])
     }
     
     override func viewDidLoad() {
@@ -63,7 +70,7 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         prepareForNewFingerprint()
     }
     
@@ -83,11 +90,7 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
         request.addValue(postLength, forHTTPHeaderField: "Content-Length")
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpBody = postData
-        Utility.makeRequest(request: request) { _ in
-            DispatchQueue.main.async {
-                _ = self.navigationController?.popViewController(animated: true)
-            }
-        }
+        Utility.makeRequest(request: request)
     }
     
     func sendData() {
@@ -127,6 +130,17 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
         }
     }
     
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if central.state != CBManagerState.poweredOn {
+            let alert = UIAlertController(title: "Bluetooth Required", message: "Please turn bluetooth on to collect data", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            self.startButton?.isEnabled = false
+        } else {
+            self.startButton?.isEnabled = true
+        }
+    }
+    
     @IBAction func buttonPressed() {
         self.isRangingBeacon = true
         beaconManager.startRangingBeacons(in: self.beaconRegion!)
@@ -147,19 +161,18 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
         self.startButton?.isEnabled = true
         self.statusLabel?.text = "Status: Not Scanning"
         self.instructions?.text = "Go to the location marked on the map. Then press the button to scan for \(Int(self.fingerprintSampleTime)) seconds. You will be asked to turn while scanning."
-        self.startButton?.setTitle("Start scanning", for: .normal)
+        self.startButton?.setTitle("Start Sampling", for: .normal)
     }
     
     func finish() {
         self.instructions?.text = "Thanks! Redirecting you back to LuzDeploy."
         self.statusLabel?.text = "Status: Uploading"
         self.sendData()
-        self.startButton?.setTitle("Start scanning", for: .normal)
+        self.startButton?.setTitle("Start Sampling", for: .normal)
         if self.workerId != nil {
             self.doneWebhook()
-        } else {
-            _ = self.navigationController?.popViewController(animated: true)
         }
+        _ = self.navigationController?.popViewController(animated: true)
         if self.nextURI != nil {
             Utility.openURL(url: self.nextURI!)
         }

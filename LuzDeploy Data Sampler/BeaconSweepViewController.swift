@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import CoreLocation
+import CoreBluetooth
 
-class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UIWebViewDelegate {
+class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UIWebViewDelegate, CBCentralManagerDelegate {
     // required
     var uuid: UUID?
     var majorId: Int?
@@ -25,6 +26,7 @@ class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UI
 
     static let storyboardId = "BeaconSweeper"
     private let beaconManager = CLLocationManager()
+    private var bluetoothManager: CBCentralManager?
     private var presentBeaconMinors = Set<Int>()
     private var isRangingBeacon = false
     private var beaconRegion: CLBeaconRegion!
@@ -41,6 +43,8 @@ class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UI
             print("Not Authorised")
             self.beaconManager.requestAlwaysAuthorization()
         }
+        
+        self.bluetoothManager = CBCentralManager.init(delegate: self, queue: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true])
     }
     
     override func viewDidLoad() {
@@ -61,7 +65,7 @@ class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UI
         self.webView.loadRequest(URLRequest(url: mapURL!))
         self.statusLabel?.text = "Status: Not Scanning"
         self.instructions?.text = "Go to node \(self.startNode!) in the map above. Then press the start button below."
-        self.startButton?.setTitle("Start scanning", for: .normal)
+        self.startButton?.setTitle("Start Health Check", for: .normal)
     
     }
     
@@ -70,6 +74,17 @@ class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UI
         if self.isRangingBeacon {
             self.beaconManager.stopRangingBeacons(in: self.beaconRegion)
             self.isRangingBeacon = false
+        }
+    }
+    
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if central.state != CBManagerState.poweredOn {
+            let alert = UIAlertController(title: "Bluetooth Required", message: "Please turn bluetooth on to collect data", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            self.startButton?.isEnabled = false
+        } else {
+            self.startButton?.isEnabled = true
         }
     }
     
@@ -82,11 +97,7 @@ class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UI
         request.addValue(postLength, forHTTPHeaderField: "Content-Length")
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpBody = postData
-        Utility.makeRequest(request: request) { _ in
-            DispatchQueue.main.async {
-                _ = self.navigationController?.popViewController(animated: true)
-            }
-        }
+        Utility.makeRequest(request: request)
     }
     
     func sendData() {
@@ -112,18 +123,17 @@ class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UI
             self.isRangingBeacon = true
             self.statusLabel?.text = "Status: Scanning"
             self.instructions?.text = "Now walk to node \(self.endNode!) at the other end of the red path. Once there, press the stop button below."
-            self.startButton?.setTitle("Stop scanning", for: .normal)
+            self.startButton?.setTitle("Stop Scanning", for: .normal)
         }
         else {
             self.instructions?.text = "Thanks! Redirecting you back to LuzDeploy."
             self.statusLabel?.text = "Status: Uploading"
             self.sendData()
-            self.startButton?.setTitle("Start scanning", for: .normal)
+            self.startButton?.setTitle("Start Health Check", for: .normal)
             if self.workerId != nil {
                 self.doneWebhook()
-            } else {
-               _ = self.navigationController?.popViewController(animated: true)
             }
+            _ = self.navigationController?.popViewController(animated: true)
             if self.nextURI != nil {
                 Utility.openURL(url: self.nextURI!)
             }

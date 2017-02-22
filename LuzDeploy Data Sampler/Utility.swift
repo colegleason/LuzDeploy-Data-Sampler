@@ -63,4 +63,18 @@ class Utility {
         }
         return result
     }
+    
+    static func queryParamToLocations(param: String) -> [FingerprintLocation] {
+        var result = [FingerprintLocation]()
+        for split: String in param.components(separatedBy: ";") {
+            let split2 = split.components(separatedBy: ",")
+            let loc = FingerprintLocation(
+                floor: Int(split2[0])!,
+                lat: Double(split2[1])!,
+                long: Double(split2[2])!
+            )
+            result.append(loc)
+        }
+        return result
+    }
 }
