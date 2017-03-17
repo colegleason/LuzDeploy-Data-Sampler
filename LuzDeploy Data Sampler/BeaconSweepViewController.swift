@@ -22,7 +22,7 @@ class BeaconSweepViewController: UIViewController, CLLocationManagerDelegate, UI
     // optional
     var nextURI: URL?
     var workerId: Int?
-    var baseURL = "https://luzdeploy-prod.herokuapp.com"
+    var baseURL = "https://luzdeploy-staging.herokuapp.com"
 
     static let storyboardId = "BeaconSweeper"
     private let beaconManager = CLLocationManager()
