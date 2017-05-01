@@ -25,7 +25,7 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
     var fingerprintSampleTime = 5.0 // seconds
     
     private let beaconManager = CLLocationManager()
-    private var bluetoothManager: CBCentralManager?
+    private var bluetoothManager: CBCentralManager? 
     private var isRangingBeacon = false
     private var beaconRegion: CLBeaconRegion?
     private var fingerprints = [Fingerprint]()
@@ -37,6 +37,7 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
     @IBOutlet weak var statusLabel: UILabel?
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var instructions: UILabel?
+    @IBOutlet weak var progress: UILabel?
     
     static let storyboardId = "Fingerprinter"
     
@@ -93,14 +94,12 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
         Utility.makeRequest(request: request)
     }
     
-    func sendData() {
+    func sendData(fingerprint: Fingerprint) {
         var request = URLRequest(url: URL(string: "\(self.baseURL)/fingerprint-data")!)
         do {
-            print("\(self.fingerprints)")
             request.httpBody = try JSONSerialization.data(
-                withJSONObject: self.fingerprints.map { $0.serialize()}
+                withJSONObject: fingerprint.serialize()
             )
-            print("\(request.httpBody)")
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             Utility.makeRequest(request: request);
@@ -121,6 +120,7 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
     }
     
     func samplingFinished() {
+        self.sendData(fingerprint: self.currentFingerprint!);
         saveFingerprint()
         self.currentLocation += 1
         if currentLocation >= (fingerprintLocations?.count)! {
@@ -152,8 +152,11 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
     }
     
     func prepareForNewFingerprint() {
+        self.progress?.text = "Samples Collected: \(self.fingerprints.count)/\(self.fingerprintLocations!.count)";
         let location = self.fingerprintLocations?[self.currentLocation]
         self.currentFingerprint = Fingerprint(
+            collectedBy: self.workerId,
+            deviceModelName: UIDevice.current.modelName,
             location: location!,
             sample: []
         )
@@ -167,7 +170,6 @@ class FingerprintViewController: UIViewController, CLLocationManagerDelegate, UI
     func finish() {
         self.instructions?.text = "Thanks! Redirecting you back to LuzDeploy."
         self.statusLabel?.text = "Status: Uploading"
-        self.sendData()
         self.startButton?.setTitle("Start Sampling", for: .normal)
         if self.workerId != nil {
             self.doneWebhook()

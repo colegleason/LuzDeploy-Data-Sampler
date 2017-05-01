@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jHD-nw-yOb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jHD-nw-yOb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -662,15 +662,27 @@ Icons provided by https://icons8.com.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Samples Collected: 10/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wim-22-j4x">
+                                <rect key="frame" x="16" y="544" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2lY-jI-29x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wo9-yu-69k" firstAttribute="trailing" secondItem="9jk-lB-pZ2" secondAttribute="trailingMargin" id="3Ko-Hy-wSe"/>
                             <constraint firstItem="jUk-sM-vGc" firstAttribute="leading" secondItem="9jk-lB-pZ2" secondAttribute="leading" id="9f5-VU-Bia"/>
                             <constraint firstItem="WlR-Ki-ruE" firstAttribute="leading" secondItem="9jk-lB-pZ2" secondAttribute="leading" id="EBw-si-lOf"/>
+                            <constraint firstItem="wim-22-j4x" firstAttribute="top" secondItem="wo9-yu-69k" secondAttribute="bottom" constant="8" id="G6G-Go-oj4"/>
                             <constraint firstItem="mSM-vE-NwJ" firstAttribute="leading" secondItem="9jk-lB-pZ2" secondAttribute="leadingMargin" id="Hsn-gn-5Q5"/>
                             <constraint firstItem="mSM-vE-NwJ" firstAttribute="top" secondItem="jUk-sM-vGc" secondAttribute="bottom" constant="8" id="JPH-Yf-knk"/>
                             <constraint firstItem="mSM-vE-NwJ" firstAttribute="trailing" secondItem="9jk-lB-pZ2" secondAttribute="trailingMargin" id="Vl0-yM-npe"/>
+                            <constraint firstItem="wim-22-j4x" firstAttribute="trailing" secondItem="9jk-lB-pZ2" secondAttribute="trailingMargin" id="bOt-hl-war"/>
+                            <constraint firstItem="wim-22-j4x" firstAttribute="leading" secondItem="9jk-lB-pZ2" secondAttribute="leadingMargin" id="cT2-In-igF"/>
                             <constraint firstItem="jUk-sM-vGc" firstAttribute="top" secondItem="KL2-1c-BWL" secondAttribute="bottom" id="f2w-M4-wbK"/>
                             <constraint firstItem="WlR-Ki-ruE" firstAttribute="top" secondItem="wo9-yu-69k" secondAttribute="bottom" constant="81" id="jU6-80-c9n"/>
                             <constraint firstAttribute="trailing" secondItem="jUk-sM-vGc" secondAttribute="trailing" id="mJK-bq-tUG"/>
@@ -682,6 +694,7 @@ Icons provided by https://icons8.com.</string>
                     </view>
                     <connections>
                         <outlet property="instructions" destination="wo9-yu-69k" id="Kq8-P8-cO8"/>
+                        <outlet property="progress" destination="wim-22-j4x" id="Xik-XX-ke2"/>
                         <outlet property="startButton" destination="WlR-Ki-ruE" id="eeJ-SI-SdX"/>
                         <outlet property="statusLabel" destination="mSM-vE-NwJ" id="Bhh-2z-nFY"/>
                         <outlet property="webView" destination="jUk-sM-vGc" id="fOh-6Z-A1f"/>

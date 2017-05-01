@@ -34,11 +34,15 @@ extension FingerprintLocation : Hashable {
 typealias BeaconSample = (Int, Int) // Minor ID, RSSI
 
 struct Fingerprint {
+    var collectedBy: Int?
+    var deviceModelName: String
     var location: FingerprintLocation
     var sample: [BeaconSample]
     
     func serialize() -> [String : Any] {
         return ["sample": sample.map {["bid": $0.0, "rssi": $0.1]},
-                "location": location.serialize()] as [String : Any]
+                "location": location.serialize(),
+                "collectedBy": collectedBy,
+                "deviceModelName": deviceModelName] as [String : Any]
     }
 }

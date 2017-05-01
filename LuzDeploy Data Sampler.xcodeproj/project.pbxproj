@@ -20,6 +20,7 @@
 		ED8B35C91E578E2A005783EB /* ActiveTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B35C81E578E2A005783EB /* ActiveTextFieldDelegate.swift */; };
 		ED8B35CD1E57A6F5005783EB /* FingerprintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B35CC1E57A6F5005783EB /* FingerprintViewController.swift */; };
 		ED8B35CF1E57A7D5005783EB /* FingerprintTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B35CE1E57A7D5005783EB /* FingerprintTypes.swift */; };
+		ED94CF821E9D79A500F25C5C /* UIDeviceModelName.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94CF811E9D79A500F25C5C /* UIDeviceModelName.swift */; };
 		EDEC670B1E54F0980097A516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEC670A1E54F0980097A516 /* Main.storyboard */; };
 		EDF90E1D1E4E4FE300D7DF21 /* SwiftValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF90E1C1E4E4FE300D7DF21 /* SwiftValidator.framework */; };
 		EDF90E1F1E4E52C000D7DF21 /* ValidationRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF90E1E1E4E52C000D7DF21 /* ValidationRules.swift */; };
@@ -57,6 +58,7 @@
 		ED8B35C81E578E2A005783EB /* ActiveTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveTextFieldDelegate.swift; sourceTree = "<group>"; };
 		ED8B35CC1E57A6F5005783EB /* FingerprintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerprintViewController.swift; sourceTree = "<group>"; };
 		ED8B35CE1E57A7D5005783EB /* FingerprintTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerprintTypes.swift; sourceTree = "<group>"; };
+		ED94CF811E9D79A500F25C5C /* UIDeviceModelName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceModelName.swift; sourceTree = "<group>"; };
 		EDEC670A1E54F0980097A516 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EDF90E1C1E4E4FE300D7DF21 /* SwiftValidator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftValidator.framework; path = "../../Library/Developer/Xcode/DerivedData/LuzDeploy_Data_Sampler-dctysezzwjczyyevymwrjwnmwyvo/Build/Products/Debug-iphonesimulator/SwiftValidator/SwiftValidator.framework"; sourceTree = "<group>"; };
 		EDF90E1E1E4E52C000D7DF21 /* ValidationRules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRules.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				ED7399C61E46767100006CA8 /* Supporting Files */,
 				ED8B35C81E578E2A005783EB /* ActiveTextFieldDelegate.swift */,
 				ED8B35CE1E57A7D5005783EB /* FingerprintTypes.swift */,
+				ED94CF811E9D79A500F25C5C /* UIDeviceModelName.swift */,
 			);
 			path = "LuzDeploy Data Sampler";
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				ED7399CB1E46767100006CA8 /* AppDelegate.swift in Sources */,
 				EDF90E1F1E4E52C000D7DF21 /* ValidationRules.swift in Sources */,
 				ED6D27001E4D230E002B91A6 /* SweepParameterViewController.swift in Sources */,
+				ED94CF821E9D79A500F25C5C /* UIDeviceModelName.swift in Sources */,
 				ED6D26FC1E4D1AD5002B91A6 /* Utility.swift in Sources */,
 				ED7399F91E4D014100006CA8 /* BeaconSweepViewController.swift in Sources */,
 				ED8B35C71E578C9F005783EB /* FingerptintParameterViewController.swift in Sources */,
